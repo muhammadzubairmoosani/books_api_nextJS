@@ -37,7 +37,7 @@ export const BookList = (): ReactNode => {
                   height={48}
                   className="h-12 w-12 flex-none rounded-full bg-gray-50"
                   src={book.imageLink}
-                  alt="profile"
+                  alt="book-img"
                 />
                 <img />
                 <div className="min-w-0 flex-auto">
