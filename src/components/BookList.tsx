@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { initialState } from "../store/slice";
 import { getBooks } from "../store/thunk";
 import { Book } from "../types";
+import Image from "next/image";
 
 export const BookList = (): ReactNode => {
   const dispatch: ThunkDispatch<typeof initialState, void, any> = useDispatch();
@@ -28,14 +29,17 @@ export const BookList = (): ReactNode => {
     <ul role="list" className="divide-y divide-gray-100">
       {!books?.length
         ? showMessage("No Books found!")
-        : books.map((book) => (
-            <li key={book.author} className="flex justify-between gap-x-6 py-5">
+        : books.map((book, index) => (
+            <li key={index} className="flex justify-between gap-x-6 py-5">
               <div className="flex gap-x-4">
-                <img
+                <Image
+                  width={48}
+                  height={48}
                   className="h-12 w-12 flex-none rounded-full bg-gray-50"
                   src={book.imageLink}
                   alt="profile"
                 />
+                <img />
                 <div className="min-w-0 flex-auto">
                   <p className="text-sm font-semibold leading-6 text-gray-900">
                     {book.author}
