@@ -13,7 +13,7 @@ export const BookList = (): ReactNode => {
 
   useEffect(() => {
     dispatch(getBooks());
-  }, []);
+  }, [dispatch]);
 
   const showMessage = (message: string) => (
     <div className="h-screen flex justify-center items-center">
