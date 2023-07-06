@@ -22,7 +22,7 @@ export const BookList = (): ReactNode => {
     </div>
   );
 
-  if (loading) return showMessage("Loading....");
+  if (loading) return showMessage("Loading...");
   if (error) return showMessage(error);
 
   return (
